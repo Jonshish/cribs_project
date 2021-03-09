@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Font Awesome -->
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <!-- Bootstrap Custom CSS -->
+        <link rel="stylesheet" href="{% static '/css/main.css' %}" />
+        <!-- Lightbox -->
+        <link href="{% static '/css/lightbox.min.css' %}" rel="stylesheet" />
+        <title>Cribs NYC</title>
+      </head>
+      <body>
+    <!-- Top Bar -->
+      {% include 'partials/_topbar.html' %}
+    <!-- End Top Bar -->
+    <!-- Nav Bar -->
+      {% include 'partials/_navbar.html' %}
+    <!-- End Nav Bar -->
+        {% block content %} {% endblock %}
+    <!-- Footer -->
+    {% include 'partials/_footer.html' %}
+    <!-- End Footer -->
+
+        <script
+          src="https://kit.fontawesome.com/9b4337080f.js"
+          crossorigin="anonymous"
+        ></script>
+        <script src="{% static '/js/popper.min.js' %}"></script>
+        <script src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static '/js/bootstrap.min.js' %}"></script>
+        <script src="{% static '/js/lightbox.min.js' %}"></script>
+        <!-- <script src="{% static '/js/scripts.js' $}"></script> -->
+      </body>
+    </html>
+  </head>
+</html>
