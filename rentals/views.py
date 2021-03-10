@@ -1,9 +1,17 @@
 from django.shortcuts import render
 
-def index(request):
-    return render(request, 'rentals/rentals.html')
+from .models import Rental
 
-def rental(request):
+def index(request):
+    rentals = Rental.objects.all()
+
+    context = {
+        'rentals': rentals
+    }
+
+    return render(request, 'rentals/rentals.html', context)
+
+def rental(request, rental_id):
     return render(request, 'rentals/rental.html')
 
 def search(request):

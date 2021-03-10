@@ -1,0 +1,172 @@
+Fields for apartments and rooms
+
+
+### RENTALS
+0. id: INT
+1. Realtor: INT (FOREIGN KEY [realtor])
+2. Title: STR
+3. Address: STR
+4. City: STR
+5. State: STR
+6. Zipcode: STR
+7. Description: TEXT
+8. Price: INT
+9. Bedrooms: INT
+10. Bathrooms: INT
+11. SQFT: INT
+11a. list_date: DATE
+11b. is_published: boolean [true]
+12. rental_main: STR
+13. rental_1: STR
+14. rental_2: STR
+15. rental_3: STR
+16. rental_4: STR
+17. rental_5: STR
+18. rental_6: STR
+19. rental_7: STR
+20. rental_8: STR
+21. rental_9: STR
+22. rental_10: STR
+23. rental_11: STR
+24. rental_12: STR
+
+Amenities List
+1. Backyard // Yes / No --- BOOLEAN [false]
+2. Balcony // Yes / No --- BOOLEAN [false]
+3. Bathtub // Yes / No --- BOOLEAN [false]
+4. Bike Room // Yes / No --- BOOLEAN [false]
+5. Bike Storage  // Yes / No --- BOOLEAN [false]
+6. Pets Allowed // All / Yes / Cats / No --- ARRAY
+7. Central A/c // Yes/ No --- BOOLEAN [false]
+8. Children's Playroom  // Yes / No  --- BOOLEAN [false]
+9. Conceirge  // Yes / No --- BOOLEAN [false]
+10. Conference Room  // Yes / No --- BOOLEAN [false]
+11. Dishwasher  // Yes / No --- BOOLEAN [false]
+13. Doorman // Yes / Virtual / No --- ARRAY
+14. Elevator  // Yes / --- BOOLEAN [false]
+15. Furnished  // Yes / --- BOOLEAN [false]
+16. Garden  // Yes / --- BOOLEAN [false]
+17. Gym  // Yes / No --- BOOLEAN [false]
+18. Hardwood Flooring  // Yes / No --- BOOLEAN [false]
+19. Ice Maker  // Yes / No --- BOOLEAN [false]
+20. Laundry // In Building / In Unit / No --- ARRAY
+22. Lobby // Yes / No --- BOOLEAN [false]
+23. Microwave // Yes / No --- BOOLEAN [false]
+24. No Fee // Yes / No --- BOOLEAN [false]
+25. Parking on-site / on-street / No --- ARRAY
+27. Patio // Yes / No --- BOOLEAN [false]
+29. Private Outdoor Space // Yes / No --- BOOLEAN [false]
+30. Private Rooftop Deck // Yes / No --- BOOLEAN [false]
+31. Shared Outdoor Space // Yes / No --- BOOLEAN [false]
+32. Stainless Steel Appliances // Yes / No --- BOOLEAN [false]
+33. Storage // Private / Shared / Yes / No --- ARRAY
+35. Swimming Pool // Yes / No --- BOOLEAN [false]
+36. Terrace // Yes / No --- BOOLEAN [false]
+37. Valet: Dry Cleaning / Parking / No --- ARRAY
+
+BOOLEAN in Amenities list should be FALSE by default
+
+
+
+
+### ROOMS
+0. id: INT
+1. Realtor: INT (FOREIGN KEY [realtor])
+2. Title: STR
+3. Address: STR
+4. City: STR
+5. State: STR
+6. Zipcode: STR
+7. Description: TEXT
+8. Price: INT
+9. Bedrooms: INT
+10. Bathrooms: INT
+11. SQFT: INT
+11a. list_date: DATE
+11b. is_published: boolean [true]
+12. room_main: STR
+13. room_1: STR
+14. room_2: STR
+15. room_3: STR
+16. room_4: STR
+17. room_5: STR
+18. room_6: STR
+19. room_7: STR
+20. room_8: STR
+21. room_9: STR
+22. room_10: STR
+23. room_11: STR
+24. room_12: STR
+
+
+
+Amenities List
+1. Backyard // Yes / No --- BOOLEAN [false]
+2. Balcony // Yes / No --- BOOLEAN [false]
+3. Bathtub // Yes / No --- BOOLEAN [false]
+4. Bike Room // Yes / No --- BOOLEAN [false]
+5. Bike Storage  // Yes / No --- BOOLEAN [false]
+6. Pets Allowed // All / Yes / Cats / No --- ARRAY
+7. Central A/c // Yes/ No --- BOOLEAN [false]
+8. Children's Playroom  // Yes / No  --- BOOLEAN [false]
+9. Conceirge  // Yes / No --- BOOLEAN [false]
+10. Conference Room  // Yes / No --- BOOLEAN [false]
+11. Dishwasher  // Yes / No --- BOOLEAN [false]
+13. Doorman // Yes / Virtual / No --- ARRAY
+14. Elevator  // Yes / --- BOOLEAN [false]
+15. Furnished  // Yes / --- BOOLEAN [false]
+16. Garden  // Yes / --- BOOLEAN [false]
+17. Gym  // Yes / No --- BOOLEAN [false]
+18. Hardwood Flooring  // Yes / No --- BOOLEAN [false]
+19. Ice Maker  // Yes / No --- BOOLEAN [false]
+20. Laundry // In Building / In Unit / No --- ARRAY
+22. Lobby // Yes / No --- BOOLEAN [false]
+23. Microwave // Yes / No --- BOOLEAN [false]
+24. No Fee // Yes / No --- BOOLEAN [false]
+25. Parking on-site / on-street / No --- ARRAY
+27. Patio // Yes / No --- BOOLEAN [false]
+29. Private Outdoor Space // Yes / No --- BOOLEAN [false]
+30. Private Rooftop Deck // Yes / No --- BOOLEAN [false]
+31. Shared Outdoor Space // Yes / No --- BOOLEAN [false]
+32. Stainless Steel Appliances // Yes / No --- BOOLEAN [false]
+33. Storage // Private / Shared / Yes / No --- ARRAY
+35. Swimming Pool // Yes / No --- BOOLEAN [false]
+36. Terrace // Yes / No --- BOOLEAN [false]
+37. Valet: Dry Cleaning / Parking / No --- ARRAY
+
+BOOLEAN in Amenities list should be FALSE by default
+
+
+
+### REALTOR
+id: INT
+name: STR
+photo: STR
+description: TEXT
+email: STR
+phone: STR
+is_mvp: BOOLEAN [0]
+hire_date: DATE
+
+
+
+### CONTACT
+id: INT
+user_id: INT
+listing: INT
+listing_id: INT
+name: STR
+emal: STR
+phone: STR
+message: TEXT
+contact_date: DATE
+
+
+### BLOG
+id: INT
+photo_main: STR
+name: STR
+summary: TEXT
+link: STR
+is_published: BOOLEAN [true]
+
