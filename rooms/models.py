@@ -13,7 +13,7 @@ class Room(models.Model):
     price = models.IntegerField()
     bedrooms = models.IntegerField()
     bathrooms = models.DecimalField(max_digits=2, decimal_places=1)
-    sqft = models.IntegerField()
+    bedroom_sqft = models.CharField(max_length=20)
     backyard = models.BooleanField(blank=True)
     balcony = models.BooleanField(blank=True)
     bathtub = models.BooleanField(blank=True)

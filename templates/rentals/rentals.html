@@ -73,7 +73,7 @@
             {% for rental in rentals %}
             <div class="col-md-6 col-lg-4 mb-4">
               <div class="card listing-preview">
-                <img href="listing.html" class="card-img-top" src="{{ rental.rental_main.url }}" alt="No listing photo available" height="325" width="750" />
+                <img href="{% url 'rental' rental.id %}" class="card-img-top" src="{{ rental.rental_main.url }}" alt="No listing photo available" height="325" width="750" />
                 <div class="card-img-overlay" style="pointer-events: none;">
                   <h2>
                     <span class="bg bg-secondary text-white">${{ rental.price | intcomma}}</span>

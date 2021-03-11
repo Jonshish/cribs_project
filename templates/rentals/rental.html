@@ -240,7 +240,7 @@
               </li>
               <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
                 <i class="fas fa-concierge-bell"></i> Valet:
-                <span class="float-right">Parking </span>
+                <span class="float-right">{{ rental.valet }}</span>
               </li>
               <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
                 <i class="fas fa-dollar-sign"></i> Broker Fee:
@@ -307,6 +307,8 @@
                     <i class="fas fa-circle fa-xs"></i> Central A/C
                     <span class="float-right"></span>
                 </li>
+                {% endif %}
+                {% if rental.child_playroom %}
                 <li class="list-group-item text-secondary border-0">
                     <i class="fas fa-circle fa-xs"></i> Childrens Playroom
                     <span class="float-right"></span>
@@ -451,7 +453,7 @@
           data-toggle="modal"
           data-target="#inquiryModal"
         >
-          Ask About This Rental
+          Ask About This Apartment
         </button>
       </div>
     </div>
