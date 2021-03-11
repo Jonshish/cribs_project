@@ -1,1 +1,6 @@
-Create Modesl for rentals, rooms, realtors, contact, blogs
+Create Models contact, blogs
+
+- finish reflecting data from databse on rentals.html, rental.hmtl and rooms.html, room.html - 
+- make sure to add inline styling to "style="pointer-events: none;" to card-img-overlay class on room.html
+- add height="325" width="750" to image div within card-listing-preview
+- add if, endfor and else statemnets to rooms.html..basically copy rentals.html

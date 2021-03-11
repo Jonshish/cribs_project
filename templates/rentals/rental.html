@@ -1,1 +1,518 @@
-<h1>Rental</h1>
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+<section id="rental-showcase-inner" class="py-5 text-white" >
+    <div class="rental-overlay">
+    <div class="rental-container" style="max-width: 100%; overflow-x: hidden;">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4">{{ rental.title }}</h1>
+          <p class="lead">
+            <i class="fas fa-map-marker"></i> {{ rental.city }}, {{ rental.state }}, {{ rental.zipcode }}</p>
+        </div>
+      </div>
+    </div>
+</div>
+  </section>
+<!-- End Rental Showcase -->
+<!-- Rental -->
+<section id="listing" class="py-4">
+  <div class="container">
+    <a href="{% url 'rentals' %}" class="btn btn-info mb-4 mt-4">Back To Rentals</a>
+    <div class="row">
+      <div class="col-md-9">
+        <!-- Home Main Image -->
+        <img src="{{ rental.rental_main.url }}" alt="" class="img-main img-fluid mb-3 height="720" width="1000" />
+        <!-- Thumbnails -->
+        <div class="row mb-3 thumbs">
+            {% if rental.rental_1 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_1.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_1.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+            {% if rental.rental_2 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_2.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_2.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+            {% if rental.rental_3 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_3.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_3.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+            {% if rental.rental_4 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_4.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_4.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+            {% if rental.rental_5 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_5.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_5.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+            {% if rental.rental_6 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_6.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_6.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+        </div>
+        <div class="row mb-5 thumbs">
+            {% if rental.rental_7 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_7.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_7.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+            {% if rental.rental_8 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_8.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_8.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+            {% if rental.rental_9 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_9.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_9.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+            {% if rental.rental_10 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_10.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_10.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+            {% if rental.rental_11 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_11.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_11.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+            {% if rental.rental_12 %}
+            <div class="col-md-2">
+            <a
+              href="{{ rental.rental_12.url }}"
+              data-lightbox="home-images"
+            >
+              <img
+                src="{{ rental.rental_12.url }}"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+            </div>
+            {% endif %}
+        </div>
+        <!-- Fields -->
+        <div class="row mb-5 fields">
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-money-bill-alt"></i> Asking Price:
+                <span class="float-right">${{ rental.price | intcomma }} per month</span>
+              </li>
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-bed"></i> Bedrooms:
+                <span class="float-right">{{ rental.bedrooms }}</span>
+              </li>
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-bath"></i> Bathrooms:
+                <span class="float-right">{{ rental.bathrooms }}</span>
+              </li>
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-pump-soap"></i> Laundry:
+                <span class="float-right">{{ rental.laundry }}</span>
+              </li>
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-male"></i> Doorman:
+                <span class="float-right">{{ rental.doorman }}</span>
+              </li>
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-car"></i> Parking:
+                <span class="float-right">{{ rental.parking }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-paw"></i> Pets Allowed:
+                <span class="float-right">{{ rental.pets_allowed }}</span>
+              </li>
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-th-large"></i> Square Feet:
+                <span class="float-right">{{ rental.sqft }}</span>
+              </li>
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-concierge-bell"></i> Valet:
+                <span class="float-right">Parking </span>
+              </li>
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-dollar-sign"></i> Broker Fee:
+                <span class="float-right">{{ rental.broker_fee | intcomma }}</span>
+              </li>
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-calendar"></i> Move In Date:
+                <span class="float-right">{{ rental.move_in_date }}</span>
+              </li>
+              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
+                <i class="fas fa-bed"></i> Realtor:
+                <span class="float-right">{{ rental.realtor }} </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="row mb-5">
+          <div class="col-md-12">
+            {{ rental.description }}
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-12 mt-5">
+            <h2 class="text-primary">Amenties List</h2>
+          </div>
+        </div>
+        <div class="row mb-5 fields">
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+                {% if rental.backyard %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Backyard
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.balcony %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Balcony
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.bathtub %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Bathtub
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.bike_room %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Bike Room
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.bike_storage %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Bike Storage
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.central_ac %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Central A/C
+                    <span class="float-right"></span>
+                </li>
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Childrens Playroom
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.concierge %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Concierge
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.conference_room %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Conference Room
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.dishwasher %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Dishwasher
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.elevator %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Elevator
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.furnished %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Furnished
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.garden %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Garden
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+                {% if rental.gym %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Gym
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.hardwood_flooring %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Hardwood Flooring
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.ice_maker %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Ice Maker
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.lobby %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Lobby
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.microwave %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Microwave
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.patio %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Patio
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.private_outdoor_space %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Private Outdoor Space
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.private_rooftop_space %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Private Rooftop Space
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.shared_outdoor_space %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Shared Outdoor Space
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.stainless_steel_appliances %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Stainless Steel Appliances
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.storage %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Storage
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.swimming_pool %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Swimming Pool
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+                {% if rental.terrace %}
+                <li class="list-group-item text-secondary border-0">
+                    <i class="fas fa-circle fa-xs"></i> Terrace
+                    <span class="float-right"></span>
+                </li>
+                {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card mb-3">
+          <img
+            class="card-img-top"
+            src="{{ rental.realtor.photo.url }}"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title">Property Realtor</h5>
+            <h6 class="text-secondary">{{ rental.realtor }}</h6>
+          </div>
+        </div>
+        <button
+          class="btn-primary btn-block btn-lg text-white"
+          data-toggle="modal"
+          data-target="#inquiryModal"
+        >
+          Ask About This Rental
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Inquiry Modal -->
+<div class="modal fade" id="inquiryModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="inquiryModalLabel">Make An Inquiry</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="property_name" class="col-form-label"
+              >Property:</label
+            >
+            <input
+              type="text"
+              name="listing"
+              class="form-control"
+              value="45 Drivewood Cirlce"
+              disabled
+            />
+          </div>
+          <div class="form-group">
+            <label for="name" class="col-form-label">Name:</label>
+            <input type="text" name="name" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-form-label">Email:</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone" class="col-form-label">Phone:</label>
+            <input type="text" name="phone" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="message" class="col-form-label">Message:</label>
+            <textarea name="message" class="form-control"></textarea>
+          </div>
+          <hr />
+          <input
+            type="submit"
+            value="Send"
+            class="btn btn-block btn-secondary text-white"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Rental -->
+{% endblock %}
