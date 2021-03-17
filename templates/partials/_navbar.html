@@ -52,7 +52,7 @@
             <a class="nav-link" href="{% url 'rooms' %}">Rooms</a>
           </li>
           <li class="nav-item mr-3">
-            <a class="nav-link" href="listings.html">Blog</a>
+            <a class="nav-link" href="blogs.html">Blog</a>
           </li>
         </ul>
 
@@ -65,14 +65,14 @@
               class="nav-item mr-3"
             {% endif %}
             >
-              <a class="nav-link" href="{% url 'dashboard' %}">
+              <a class="nav-link" href="dashboard.html">
                 Welcome {{ user.first_name }} (Dashboard)</a
               >
             </li>
             <li class="nav-item mr-3">
-              <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout
+              <a href="{% url 'logout' %}" class="nav-link"><i class="fas fa-sign-out-alt"></i> Logout
               </a>
-              <form action="{% url 'logout' %}" method="POST" id="logout">
+              <form action="logout.html" method="POST" id="logout">
                 {% csrf_token %}
                 <input type="hidden">
               </form>
@@ -96,7 +96,7 @@
               class="nav-item mr-3"
             {% endif %}
             >
-              <a class="nav-link" href="{% url 'login' %}"">
+              <a class="nav-link" href="{% url 'login' %}">
                 <i class="fas fa-sign-in-alt"></i>
 
                 Login</a

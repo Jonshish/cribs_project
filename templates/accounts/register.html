@@ -1,144 +1,108 @@
 {% extends 'base.html' %}
 
+{% load widget_tweaks %}
+
 {% block content %}
-  <!-- Register -->
-  <section id="register" class="mb-5">
-    <div id="layoutAuthentication">
-      <div id="layoutAuthentication_content">
-        <main>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-7">
-                <div class="card shadow-lg border-0 rounded-lg mt-5">
-                  <div class="card-header">
-                    <h3 class="text-center font-weight-light my-4">
-                      Create Account
-                    </h3>
-                  </div>
-                  <div class="card-body">
-                      <!-- Alerts -->
-                      {% include 'partials/_alerts.html' %}
-                    <form action="{% url 'register' %}" method="POST">
-                        {% csrf_token %}
-                      <div class="form-row input-group">
-                        <div class="col-md-6">
-                          <div class="form-group input-group-addon">
-                            <label class="small mb-1" for="first_name"
-                              >First Name</label
-                            >
-                            <input
-                              class="form-control py-3"
-                              type="text"
-                              name="first_name" 
-                              placeholder="Enter first name"
-                              style="height: 50px"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group input-group-addon">
-                            <label class="small mb-1" for="last_name"
-                              >Last Name</label
-                            >
-                            <input
-                              class="form-control py-3"
-                              type="text"
-                              name="last_name" 
-                              placeholder="Enter last name"
-                              style="height: 50px"
-                            />
-                          </div>
+<!-- Register -->
+<section id="register" class="mb-5">
+  <div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+      <main>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-7">
+              <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                  <h3 class="text-center font-weight-light my-4">
+                    Create Account
+                  </h3>
+                </div>
+                <div class="card-body">
+                    <!-- Alerts -->
+                    {% include 'partials/_alerts.html' %}
+                  <form action="" method="POST">
+                      {% csrf_token %}
+                    <div class="form-row input-group">
+                      <div class="col-md-6">
+                        <div class="form-group input-group-addon">
+                          <label class="small mb-1" for="first_name"
+                            >First Name</label
+                          >
+                          {% render_field form.first_name class="form-control py-3" placeholder="Your first name" %}
                         </div>
                       </div>
-                      <div class="form-group input-group-addon mb-3">
-                        <label class="small mb-1" for="username"
-                          >Username</label
-                        >
-                        <input
-                          class="form-control input"
-                          type="text"
-                          name="username" 
-                          aria-describedby="emailHelp"
-                          placeholder="Enter Username"
-                          style="height: 50px"
-                        />
-                      </div>
-                      <div class="form-group input-group-addon mb-3">
-                        <label class="small mb-1" for="email"
-                          >Email</label
-                        >
-                        <input
-                          class="form-control input"
-                          type="email"
-                          name="email" 
-                          aria-describedby="emailHelp"
-                          placeholder="Enter email address"
-                          style="height: 50px"
-                        />
-                      </div>
-                      <div class="form-row input-group">
-                        <div class="col-md-6 mb-3">
-                          <div class="form-group mb-2 input-group-addon">
-                            <label class="small mb-1" for="password"
-                              >Password</label
-                            >
-                            <input
-                              class="form-control py-3"
-                              type="password"
-                              name="password" 
-                              placeholder="Enter password"
-                              style="height: 50px"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group input-group-addon">
-                            <label class="small mb-1" for="password2"
-                              >Confirm Password</label
-                            >
-                            <input
-                              class="form-control py-3"
-                              type="password"
-                              name="password2" 
-                              placeholder="Confirm password"
-                              style="height: 50px"
-                            />
-                          </div>
+                      <div class="col-md-6">
+                        <div class="form-group input-group-addon">
+                          <label class="small mb-1" for="last_name"
+                            >Last Name</label
+                          >
+                          {% render_field form.last_name class="form-control py-3" placeholder="Your last name" %}
                         </div>
                       </div>
-                      <div class="form-group mt-4 mb-3">
-                        <input type="submit" value="Create Account" class="btn btn-primary btn-block text-white" href="{% url 'register' %}">
-                      </div>
-                    </form>
-                  </div>
-                  <div class="card-footer text-center">
-                    <div class="small">
-                      <a href="{% url 'login' %}">Have an account? Go to login</a>
                     </div>
-                    <footer class="py-4 bg-light mt-auto">
-                      <div class="container-fluid">
-                        <div
-                          class="d-flex align-items-center justify-content-between small"
-                        >
-                          <div class="text-muted">
-                            Copyright &copy; Cribs NYC 2021
-                          </div>
-                          <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                          </div>
+                    <div class="form-group input-group-addon mb-3">
+                      <label class="small mb-1" for="username"
+                        >Username</label
+                      >
+                      {% render_field form.username class="form-control py-3" placeholder="Your username" %}
+                    </div>
+                    <div class="form-group input-group-addon mb-3">
+                      <label class="small mb-1" for="email"
+                        >Email</label
+                      >
+                      {% render_field form.email class="form-control py-3" placeholder="Your email" %}
+                    </div>
+                    <div class="form-row input-group">
+                      <div class="col-md-6 mb-3">
+                        <div class="form-group mb-2 input-group-addon">
+                          <label class="small mb-1" for="password"
+                            >Password</label
+                          >
+                          {% render_field form.password1 class="form-control py-3" placeholder="Your password" %}
                         </div>
                       </div>
-                    </footer>
+                      <div class="col-md-6">
+                        <div class="form-group input-group-addon">
+                          <label class="small mb-1" for="password2"
+                            >Confirm Password</label
+                          >
+                          {% render_field form.password2 class="form-control py-3" placeholder="Re-type password" %}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group mt-4 mb-3">
+                      <input type="submit" value="Create Account" class="btn btn-primary btn-block text-white" href="{% url 'login' %}">
+                    </div>
+                  </form>
+                </div>
+                {{ form.errors }}
+                <div class="card-footer text-center">
+                  <div class="small">
+                    <a href="{% url 'login' %}">Have an account? Go to login</a>
                   </div>
+                  <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                      <div
+                        class="d-flex align-items-center justify-content-between small"
+                      >
+                        <div class="text-muted">
+                          Copyright &copy; Cribs NYC 2021
+                        </div>
+                        <div>
+                          <a href="#">Privacy Policy</a>
+                          &middot;
+                          <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                      </div>
+                    </div>
+                  </footer>
                 </div>
               </div>
             </div>
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
+  </div>
 </section>
 {% endblock %}
-<!-- End Register -->

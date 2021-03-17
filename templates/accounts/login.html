@@ -16,7 +16,7 @@
                   <div class="card-body">
                       <!-- Alerts -->
                       {% include 'partials/_alerts.html' %}
-                    <form action="{% url 'login' %}" method="POST">
+                    <form method="POST">
                         {% csrf_token %}
                       <div class="form-group mb-2">
                         <label class="small mb-1" for="username"
@@ -59,7 +59,7 @@
                       <div
                         class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"
                       >
-                        <a class="small" href="{% url 'login' %}"
+                        <a class="small" href="login.html"
                           >Forgot Password?</a
                         >
                         <input

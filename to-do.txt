@@ -4,3 +4,7 @@ Create Models contact, blogs
 - make sure to add inline styling to "style="pointer-events: none;" to card-img-overlay class on room.html
 - add height="325" width="750" to image div within card-listing-preview
 - add if, endfor and else statemnets to rooms.html..basically copy rentals.html
+
+
+3/17
+Watch Dennis Ivy videos https://youtu.be/tUqUdu0Sjyc and https://youtu.be/sFPcd6myZrY
