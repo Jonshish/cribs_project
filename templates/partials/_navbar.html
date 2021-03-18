@@ -40,7 +40,7 @@
               class="nav-item mr-3"
             {% endif %}
           >
-            <a class="nav-link" href="{% url 'rentals' %}">Rentals</a>
+            <a class="nav-link" href="{% url 'rentals' %}">Apartments</a>
           </li>
           <li 
             {% if 'rooms' in request.path %}
@@ -65,7 +65,7 @@
               class="nav-item mr-3"
             {% endif %}
             >
-              <a class="nav-link" href="dashboard.html">
+              <a class="nav-link" href="{% url 'dashboard' %}">
                 Welcome {{ user.first_name }} (Dashboard)</a
               >
             </li>

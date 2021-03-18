@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import views as auth_views
+from contacts.models import Contact
 
 def loginPage(request):
     if request.method == 'POST':
@@ -36,4 +38,10 @@ def logoutUser(request):
     return redirect('login')
 
 def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
+    user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
+
+    context = {
+        'contacts': user_contacts
+    }
+
+    return render(request, 'accounts/dashboard.html', context)

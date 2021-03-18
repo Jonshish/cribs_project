@@ -2,6 +2,8 @@
 
 {% load humanize %}
 
+{% block title %} | {{ rental.title }}{% endblock %}
+
 {% block content %}
 <section id="rental-showcase-inner" class="py-5 text-white" >
     <div class="rental-overlay">
@@ -20,7 +22,9 @@
 <!-- Rental -->
 <section id="listing" class="py-4">
   <div class="container">
-    <a href="{% url 'rentals' %}" class="btn btn-info mb-4 mt-4">Back To Rentals</a>
+    <!-- Alerts -->
+    {% include 'partials/_alerts.html' %}
+    <a href="{% url 'rentals' %}" class="btn btn-info mb-4 mt-4">Back To Apartments</a>
     <div class="row">
       <div class="col-md-9">
         <!-- Home Main Image -->
@@ -471,29 +475,35 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="{% url 'contact' %}" method="POST">
+          {% csrf_token %}
+          {% if user.is_authenticated %}
+            <input type="hidden" name="user_id" value="{{ user.id }}">
+          {% else %}
+            <input type="hidden" name="user_id" value="0">
+          {% endif %}
+          <input type="hidden" name="realtor_email" value="{{ rental.realtor.email }}">
+          <input type="hidden" name="rental_id" value="{{ rental.id }}">
           <div class="form-group">
             <label for="property_name" class="col-form-label"
               >Property:</label
             >
             <input
               type="text"
-              name="listing"
+              name="rental"
               class="form-control"
-              value="45 Drivewood Cirlce"
-              disabled
-            />
+              value="{{ rental.title }}"/>
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
-            <input type="text" name="name" class="form-control" required />
+            <input type="text" name="name" class="form-control" {% if user.is_authenticated %} value="{{ user.first_name }} {{ user.last_name }}" {% endif %} required />
           </div>
           <div class="form-group">
             <label for="email" class="col-form-label">Email:</label>
             <input
               type="email"
               name="email"
-              class="form-control"
+              class="form-control" {% if user.is_authenticated %} value="{{ user.email }}" {% endif %}
               required
             />
           </div>

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %} | Login{% endblock %}
+
 {% block content %}
 <!-- Login -->
 <section id="login" class="mb-5">
@@ -59,7 +61,7 @@
                       <div
                         class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"
                       >
-                        <a class="small" href="login.html"
+                        <a class="small" href="{% url 'reset_password' %}"
                           >Forgot Password?</a
                         >
                         <input
