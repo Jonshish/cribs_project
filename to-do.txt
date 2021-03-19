@@ -6,10 +6,15 @@ Create Models contact, blogs
 - add if, endfor and else statemnets to rooms.html..basically copy rentals.html
 
 
-Change app name 'Contact' to something like 'Apartment Contacts' and create new Contact app called 'Room Contacts' while watching Brad tutorial.
-Add display table below the users dashboard. Needs to have both Apartment and Room inquiry tables
 
-Create Blog Model and connect medium.com
+
+
+
+
+Create Blog Model and connect medium.com - wednesday, thursday
+google maps - monday watch Brad video Google geocode API
+closest trains info - tuesday
+deposit  - add button links in dashboard.html - tuesday
 check links
 fix hamburger mobile menu
 test functionality

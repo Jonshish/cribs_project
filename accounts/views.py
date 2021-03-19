@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import views as auth_views
 from contacts.models import Contact
+from roomcontacts.models import roomContact
 
 def loginPage(request):
     if request.method == 'POST':
@@ -39,9 +40,11 @@ def logoutUser(request):
 
 def dashboard(request):
     user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
+    user_roomcontacts = roomContact.objects.order_by('-contact_date').filter(user_id=request.user.id)
 
     context = {
-        'contacts': user_contacts
+        'contacts': user_contacts,
+        'roomcontacts': user_roomcontacts
     }
 
     return render(request, 'accounts/dashboard.html', context)

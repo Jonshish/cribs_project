@@ -7,10 +7,18 @@
  <section id="dashboard" class="py-4">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
           <h2 class="mb-3 mt-5">Welcome, {{ user.first_name }}!</h2>
-          {% if contacts %}
             <p class="mb-5 text-muted">Here are the apartments and/or rooms that you have inquired about.</p>
+        </div>
+        <div class="col-md-6">
+          <a class="btn btn-danger text-white text-uppercase mb-3 mt-5 py-3" style="float: right;" href="https://secure.weimark.com/ifw/1f05782aa98a90ec0db0df56e4488ae5/3316/new/" target="_blank">Tenant Application Form</a>
+        </div>
+      </div>
+      <div class="row">
+        <h3 class="mb-3 mt-5">Apartment Inquiries</h3>
+        <div class="col-md-12">
+          {% if contacts %}
             <table class="table">
               <thead>
                 <tr>
@@ -25,7 +33,38 @@
                     <td>2{{ contact.id }}</td>
                     <td>{{ contact.rental }}</td>
                     <td>
-                      <a class="btn btn-light" href="{% url 'rental' contact.rental_id %}">View Apartment</a>
+                      <a class="btn btn-success text-white" style="float: right;" href="">Place Deposit</a>
+                      <a class="btn btn-light mr-3" style="float: right;" href="{% url 'rental' contact.rental_id %}">View Apartment</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% else %}
+            <p>You have not made any inquires.</p>
+          {% endif %}
+        </div>
+      </div>
+      <div class="row mt-5 mb-3">
+        <h3 class="mb-3 mt-5">Room Inquiries</h3>
+        <div class="col-md-12">
+          {% if roomcontacts %}
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Property</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for roomcontact in roomcontacts %}
+                  <tr>
+                    <td>2{{ roomcontact.id }}</td>
+                    <td>{{ roomcontact.room }}</td>
+                    <td>
+                      <a class="btn btn-success text-white" style="float: right;" href="">Place Deposit</a>
+                      <a class="btn btn-light mr-3" style="float: right;" href="{% url 'room' roomcontact.room_id %}">View Room</a>
                     </td>
                   </tr>
                 {% endfor %}

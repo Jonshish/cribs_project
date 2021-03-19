@@ -264,8 +264,13 @@
 
         <!-- Description -->
         <div class="row mb-5">
-          <div class="col-md-12">
+          <div class="col-md-12 mb-5">
             {{ rental.description }}
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-12 mb-5">
+            Google Maps goes here
           </div>
         </div>
         <div class="row mb-5">
@@ -453,11 +458,21 @@
           </div>
         </div>
         <button
-          class="btn-primary btn-block btn-lg text-white"
+          class="btn-primary btn-block btn-lg text-white mb-3"
           data-toggle="modal"
           data-target="#inquiryModal"
         >
-          Ask About This Apartment
+          Send Email
+        </button>
+        <button
+          class="btn-primary btn-block btn-lg text-white mb-3"
+        >
+          <i class="fa fa-phone" aria-hidden="true"></i>  Call {{ rental.realtor.phone }}
+        </button>
+        <button
+          class="btn-primary btn-block btn-lg text-white"
+        >
+          <i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp
         </button>
       </div>
     </div>
@@ -469,7 +484,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="inquiryModalLabel">Make An Inquiry</h5>
+        <h5 class="modal-title" id="inquiryModalLabel">Ask About This Apartment</h5>
         <button type="button" class="close" data-dismiss="modal">
           <span>&times;</span>
         </button>
@@ -526,5 +541,10 @@
     </div>
   </div>
 </div>
+<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJCZij5UK_kn8DMiJ-F7CNrq76lvNEEU&callback=initMap&libraries=&v=weekly"
+async
+></script>
 <!-- End Rental -->
 {% endblock %}

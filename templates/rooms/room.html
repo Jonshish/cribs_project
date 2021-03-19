@@ -22,6 +22,8 @@
 <!-- Rental -->
 <section id="listing" class="py-4">
   <div class="container">
+    <!-- Alerts -->
+    {% include 'partials/_alerts.html' %}
     <a href="{% url 'rooms' %}" class="btn btn-info mb-4 mt-4">Back To Rooms</a>
     <div class="row">
       <div class="col-md-9">
@@ -451,11 +453,21 @@
           </div>
         </div>
         <button
-          class="btn-primary btn-block btn-lg text-white"
+          class="btn-primary btn-block btn-lg text-white mb-3"
           data-toggle="modal"
           data-target="#inquiryModal"
         >
-          Ask About This Room
+          Send Email
+        </button>
+        <button
+          class="btn-primary btn-block btn-lg text-white mb-3"
+        >
+          <i class="fa fa-phone" aria-hidden="true"></i>  Call {{ room.realtor.phone }}
+        </button>
+        <button
+          class="btn-primary btn-block btn-lg text-white"
+        >
+          <i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp
         </button>
       </div>
     </div>
@@ -467,35 +479,42 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="inquiryModalLabel">Make An Inquiry</h5>
+        <h5 class="modal-title" id="inquiryModalLabel">Ask About This Room</h5>
         <button type="button" class="close" data-dismiss="modal">
           <span>&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="{% url 'roomcontact' %}" method="POST">
+          {% csrf_token %}
+          {% if user.id_authenticated %}
+            <input type="hidden" name="user_id" value="{{ user.id }}">
+          {% else %}
+            <input type="hidden" name="user_id" value="0">
+          {% endif %}
+          <input type="hidden" name="realtor_email" value="{{ room.realtor.email }}">
+          <input type="hidden" name="room_id" value="{{ room.id }}">
           <div class="form-group">
             <label for="property_name" class="col-form-label"
               >Property:</label
             >
             <input
               type="text"
-              name="listing"
+              name="room"
               class="form-control"
-              value="45 Drivewood Cirlce"
-              disabled
+              value="{{ room.title }}"
             />
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
-            <input type="text" name="name" class="form-control" required />
+            <input type="text" name="name" class="form-control" {% if user.is_authenticated %} value="{{ user.first_name }} {{ user.last_name }}" {% endif %} required />
           </div>
           <div class="form-group">
             <label for="email" class="col-form-label">Email:</label>
             <input
               type="email"
               name="email"
-              class="form-control"
+              class="form-control" {% if user.is_authenticated %} value="{{ user.email }}" {% endif %}
               required
             />
           </div>
