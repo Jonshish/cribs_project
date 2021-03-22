@@ -9,6 +9,8 @@ class Rental(models.Model):
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     zipcode = models.CharField(max_length=20)
+    lat = models.DecimalField(max_digits=9, decimal_places=6, help_text="Go to https://www.google.com/maps and search your apartments address. Right-click on the pointer and copy your lat and lng values")
+    lng = models.DecimalField(max_digits=9, decimal_places=6, help_text="Go to https://www.google.com/maps and search your apartments address. Right-click on the pointer and copy your lat and lng values")
     description = models.TextField(blank=True)
     price = models.IntegerField()
     bedrooms = models.IntegerField()

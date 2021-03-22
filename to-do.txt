@@ -14,7 +14,7 @@ Create Models contact, blogs
 Create Blog Model and connect medium.com - wednesday, thursday
 google maps - monday watch Brad video Google geocode API
 closest trains info - tuesday
-deposit  - add button links in dashboard.html - tuesday
+deposit form paypal and venmo integration- add button links in dashboard.html - tuesday
 check links
 fix hamburger mobile menu
 test functionality
