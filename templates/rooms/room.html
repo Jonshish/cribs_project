@@ -453,27 +453,37 @@
             alt=""
           />
           <div class="card-body">
-            <h5 class="card-title">Property Realtor</h5>
+            <h5 class="card-title">Property Agent</h5>
             <h6 class="text-secondary">{{ room.realtor }}</h6>
           </div>
         </div>
-        <button
+        <a
           class="btn-primary btn-block btn-lg text-white mb-3"
           data-toggle="modal"
           data-target="#inquiryModal"
+          style="text-align: center;text-decoration: none;"
         >
           Send Email
-        </button>
-        <button
+        </a>
+        <a
           class="btn-primary btn-block btn-lg text-white mb-3"
+          href="tel:{{ room.realtor.phone }}"
+          type="button"
+          class="btn-primary btn-block btn-lg text-white mb-3"
+          style="text-align: center;text-decoration: none;"
         >
           <i class="fa fa-phone" aria-hidden="true"></i>  Call {{ room.realtor.phone }}
-        </button>
-        <button
+        </a>
+        <a
           class="btn-primary btn-block btn-lg text-white"
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=1{{ room.realtor.phone }}"
+          type="button"
+          class="btn-primary btn-block btn-lg text-white"
+          style="text-align: center;text-decoration: none;"
         >
           <i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp
-        </button>
+        </a>
       </div>
     </div>
   </div>

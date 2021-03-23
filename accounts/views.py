@@ -48,3 +48,6 @@ def dashboard(request):
     }
 
     return render(request, 'accounts/dashboard.html', context)
+
+def deposit(request):
+    return render(request, 'accounts/deposit.html')

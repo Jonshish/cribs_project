@@ -12,9 +12,8 @@ Create Models contact, blogs
 
 
 Create Blog Model and connect medium.com - wednesday, thursday
-google maps - monday watch Brad video Google geocode API
-closest trains info - tuesday
-deposit form paypal and venmo integration- add button links in dashboard.html - tuesday
+closest trains info - tuesday DONT ADD
+deposit form paypal and venmo integration- add button links in dashboard.html - CANT DO UNTIL CHECKING ACCOUNT FIOR BIZ IS SETUP
 check links
 fix hamburger mobile menu
 test functionality

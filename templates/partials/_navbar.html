@@ -9,11 +9,11 @@
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-bs-target="navbarNavAltMarkup"
+        data-target="navbarNavAltMarkup"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 0%;">
+      <nav class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin-left: 0%;">
         <ul class="navbar-nav">
           <li 
             {% if '/' == request.path %}
@@ -52,7 +52,7 @@
             <a class="nav-link" href="{% url 'rooms' %}">Rooms</a>
           </li>
           <li class="nav-item mr-3">
-            <a class="nav-link" href="blogs.html">Blog</a>
+            <a class="nav-link" href="{% url 'blogs' %}">Blog</a>
           </li>
         </ul>
 
@@ -104,7 +104,7 @@
             </li>
           {% endif %}
         </ul>
-      </div>
+      </nav>
     </div>
   </nav>
   <!-- End Nav Bar -->

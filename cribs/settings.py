@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "contacts.apps.ContactsConfig",
     "roomcontacts.apps.RoomcontactsConfig",
+    "blogs.apps.BlogsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
