@@ -15,6 +15,7 @@ Create Blog Model and connect medium.com - wednesday, thursday
 closest trains info - tuesday DONT ADD
 deposit form paypal and venmo integration- add button links in dashboard.html - CANT DO UNTIL CHECKING ACCOUNT FIOR BIZ IS SETUP
 check links
+terms of service and privacy policy
 fix hamburger mobile menu
 test functionality
 deploy
