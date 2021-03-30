@@ -166,3 +166,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "info@cribsnyc.com"
 EMAIL_HOST_PASSWORD = "Wearecribs2020."
+
+try:
+    from .local_settings import *
+except ImportError:
+        pass
