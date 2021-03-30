@@ -8,3 +8,5 @@ db.sqlite3
 /media
 cribs_project_venv
 /static
+schemas.txt
+to-do.txt
