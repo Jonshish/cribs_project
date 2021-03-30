@@ -14,9 +14,7 @@
           <form class="search-form" action="{% url 'search_rooms' %}">
             <h1 class="display-4 mb-4">Room Search</h1>
             <p class="lead pb-4">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Recusandae quas, asperiores eveniet vel nostrum magnam
-              voluptatum tempore! Consectetur, id commodi!
+              Use the search box below to find your new room! Search by feature, neighborhood, bedrooms, and price range!
             </p>
             <!-- Form Row 1 -->
             <div class="form-row">
@@ -103,38 +101,38 @@
                 </div>
                 <hr />
                 <div class="row py-2 text-secondary">
-                  <div class="col-6">
-                    <i class="fas fa-bed"></i> Bedrooms: {{ room.bedrooms }}
+                  <div class="col-6" style="color: #4e5965;">
+                    <i class="fas fa-bed text-secondary"></i> Bedrooms: {{ room.bedrooms }}
                   </div>
-                  <div class="col-6">
-                    <i class="fas fa-bath"></i> Bathrooms: {{ room.bathrooms }}
-                  </div>
-                </div>
-                <div class="row py-2 text-secondary">
-                  <div class="col-6">
-                    <i class="fas fa-th-large"></i> Sqft: {{ room.bedroom_sqft }}
-                  </div>
-                  <div class="col-6">
-                    <i class="fas fa-pump-soap"></i> Laundry: {{ room.laundry }}
+                  <div class="col-6" style="color: #4e5965;">
+                    <i class="fas fa-bath text-secondary"></i> Bathrooms: {{ room.bathrooms }}
                   </div>
                 </div>
                 <div class="row py-2 text-secondary">
-                  <div class="col-6">
-                    <i class="fas fa-male"></i> Doorman: {{ room.doorman }}
+                  <div class="col-6" style="color: #4e5965;">
+                    <i class="fas fa-th-large text-secondary"></i> Sqft: {{ room.bedroom_sqft }}
                   </div>
-                  <div class="col-6">
-                    <i class="fas fa-paw"></i> Pets Allowed: {{ room.pets_allowed }}
+                  <div class="col-6" style="color: #4e5965;">
+                    <i class="fas fa-pump-soap text-secondary"></i> Laundry: {{ room.laundry }}
+                  </div>
+                </div>
+                <div class="row py-2 text-secondary">
+                  <div class="col-6" style="color: #4e5965;">
+                    <i class="fas fa-male text-secondary"></i> Doorman: {{ room.doorman }}
+                  </div>
+                  <div class="col-6" style="color: #4e5965;">
+                    <i class="fas fa-paw text-secondary"></i> Pets Allowed: {{ room.pets_allowed }}
                   </div>
                 </div>
                 <hr />
                 <div class="row py-2 text-secondary">
-                  <div class="col-12">
-                    <i class="fas fa-user"></i> Realtor: {{ room.realtor }}
+                  <div class="col-12" style="color: #4e5965;">
+                    <i class="fas fa-user text-secondary"></i> Realtor: {{ room.realtor }}
                   </div>
                 </div>
                 <div class="row text-secondary pb-2">
-                  <div class="col-12">
-                    <i class="fas fa-clock"></i> Move In: {{ room.move_in_date }}
+                  <div class="col-12" style="color: #4e5965;">
+                    <i class="fas fa-clock text-secondary"></i> Move In: {{ room.move_in_date }}
                   </div>
                 </div>
                 <hr />

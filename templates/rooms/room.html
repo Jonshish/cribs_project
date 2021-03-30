@@ -1,23 +1,19 @@
-{% extends 'base.html' %}
-
-{% load humanize %}
-
-{% block title %} | {{ room.title }}{% endblock %}
-
-{% block content %}
-<section id="rental-showcase-inner" class="py-5 text-white" >
-    <div class="rental-overlay">
-    <div class="rental-container" style="max-width: 100%; overflow-x: hidden;">
+{% extends 'base.html' %} {% load humanize %} {% block title %} | {{ room.title }}{% endblock %} {% block content %}
+<section id="rental-showcase-inner" class="py-5 text-white">
+  <div class="rental-overlay">
+    <div class="rental-container" style="max-width: 100%; overflow-x: hidden">
       <div class="row text-center">
         <div class="col-md-12">
           <h1 class="display-4">{{ room.title }}</h1>
           <p class="lead">
-            <i class="fas fa-map-marker"></i> {{ room.city }}, {{ room.state }}, {{ room.zipcode }}</p>
+            <i class="fas fa-map-marker"></i> {{ room.city }}, {{ room.state }},
+            {{ room.zipcode }}
+          </p>
         </div>
       </div>
     </div>
-</div>
-  </section>
+  </div>
+</section>
 <!-- End Rental Showcase -->
 <!-- Rental -->
 <section id="listing" class="py-4">
@@ -28,234 +24,230 @@
     <div class="row">
       <div class="col-md-9">
         <!-- Home Main Image -->
-        <img src="{{ room.room_main.url }}" alt="" class="img-main img-fluid mb-3 height="720" width="1000" />
+        <img src="{{ room.room_main.url }}" alt="" class="img-main img-fluid
+        mb-3 height="720" width="1000" />
         <!-- Thumbnails -->
         <div class="row mb-3 thumbs">
-            {% if room.room_1 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_1.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_1.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          {% if room.room_1 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_1.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_1.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
-            {% if room.room_2 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_2.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_2.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          </div>
+          {% endif %} {% if room.room_2 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_2.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_2.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
-            {% if room.room_3 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_3.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_3.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          </div>
+          {% endif %} {% if room.room_3 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_3.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_3.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
-            {% if room.room_4 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_4.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_4.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          </div>
+          {% endif %} {% if room.room_4 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_4.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_4.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
-            {% if room.room_5 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_5.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_5.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          </div>
+          {% endif %} {% if room.room_5 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_5.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_5.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
-            {% if room.room_6 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_6.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_6.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          </div>
+          {% endif %} {% if room.room_6 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_6.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_6.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
+          </div>
+          {% endif %}
         </div>
         <div class="row mb-5 thumbs">
-            {% if room.room_7 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_7.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_7.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          {% if room.room_7 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_7.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_7.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
-            {% if room.room_8 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_8.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_8.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          </div>
+          {% endif %} {% if room.room_8 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_8.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_8.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
-            {% if room.room_9 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_9.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_9.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          </div>
+          {% endif %} {% if room.room_9 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_9.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_9.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
-            {% if room.room_10 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_10.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_10.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          </div>
+          {% endif %} {% if room.room_10 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_10.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_10.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
-            {% if room.room_11 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_11.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_11.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          </div>
+          {% endif %} {% if room.room_11 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_11.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_11.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
-            {% if room.room_12 %}
-            <div class="col-md-2">
-            <a
-              href="{{ room.room_12.url }}"
-              data-lightbox="home-images"
-            >
-              <img
-                src="{{ room.room_12.url }}"
-                alt=""
-                class="img-fluid"
-              />
+          </div>
+          {% endif %} {% if room.room_12 %}
+          <div class="col-md-2">
+            <a href="{{ room.room_12.url }}" data-lightbox="home-images">
+              <img src="{{ room.room_12.url }}" alt="" class="img-fluid" />
             </a>
-            </div>
-            {% endif %}
+          </div>
+          {% endif %}
         </div>
         <!-- Fields -->
         <div class="row mb-5 fields">
           <div class="col-md-6">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-money-bill-alt"></i> Asking Price:
-                <span class="float-right">${{ room.price | intcomma }} per month</span>
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-money-bill-alt text-secondary"></i> Asking
+                Price:
+                <span class="float-right"
+                  >${{ room.price | intcomma }} per month</span
+                >
               </li>
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-bed"></i> Bedrooms:
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-bed text-secondary"></i> Bedrooms:
                 <span class="float-right">{{ room.bedrooms }}</span>
               </li>
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-bath"></i> Bathrooms:
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-bath text-secondary"></i> Bathrooms:
                 <span class="float-right">{{ room.bathrooms }}</span>
               </li>
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-pump-soap"></i> Laundry:
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-pump-soap text-secondary"></i> Laundry:
                 <span class="float-right">{{ room.laundry }}</span>
               </li>
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-male"></i> Doorman:
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-male text-secondary"></i> Doorman:
                 <span class="float-right">{{ room.doorman }}</span>
               </li>
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-car"></i> Parking:
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-car text-secondary"></i> Parking:
                 <span class="float-right">{{ room.parking }}</span>
               </li>
             </ul>
           </div>
           <div class="col-md-6">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-paw"></i> Pets Allowed:
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-paw text-secondary"></i> Pets Allowed:
                 <span class="float-right">{{ room.pets_allowed }}</span>
               </li>
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-th-large"></i> Square Feet:
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-th-large text-secondary"></i> Square Feet:
                 <span class="float-right">{{ room.bedroom_sqft }}</span>
               </li>
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-concierge-bell"></i> Valet:
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-concierge-bell text-secondary"></i> Valet:
                 <span class="float-right">Parking </span>
               </li>
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-dollar-sign"></i> Broker Fee:
-                <span class="float-right">{{ room.broker_fee | intcomma }}</span>
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-dollar-sign text-secondary"></i> Broker Fee:
+                <span class="float-right"
+                  >{{ room.broker_fee | intcomma }}</span
+                >
               </li>
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-calendar"></i> Move In Date:
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-calendar text-secondary"></i> Move In Date:
                 <span class="float-right">{{ room.move_in_date }}</span>
               </li>
-              <li class="list-group-item text-secondary" style="border-bottom-style: solid; border-bottom-width: 2px;">
-                <i class="fas fa-bed"></i> Realtor:
+              <li
+                class="list-group-item"
+                style="
+                  border-bottom-style: solid;
+                  border-bottom-width: 2px;
+                  color: #4e5965;
+                "
+              >
+                <i class="fas fa-user text-secondary"></i> Realtor:
                 <span class="float-right">{{ room.realtor }} </span>
               </li>
             </ul>
@@ -264,9 +256,7 @@
 
         <!-- Description -->
         <div class="row mb-5">
-          <div class="col-md-12">
-            {{ room.description }}
-          </div>
+          <div class="col-md-12 text-dark">{{ room.description }}</div>
         </div>
         <div class="row mb-5">
           <div class="col-md-12 mb-5">
@@ -281,177 +271,156 @@
         <div class="row mb-5 fields">
           <div class="col-md-6">
             <ul class="list-group list-group-flush">
-                {% if room.backyard %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Backyard
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.balcony %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Balcony
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.bathtub %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Bathtub
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.bike_room %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Bike Room
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.bike_storage %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Bike Storage
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.central_ac %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Central A/C
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.child_playroom %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Childrens Playroom
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.concierge %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Concierge
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.conference_room %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Conference Room
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.dishwasher %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Dishwasher
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.elevator %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Elevator
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.furnished %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Furnished
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.garden %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Garden
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
+              {% if room.backyard %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Backyard
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.balcony %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Balcony
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.bathtub %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Bathtub
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.bike_room %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Bike Room
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.bike_storage %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Bike Storage
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.central_ac %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Central A/C
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.child_playroom %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Childrens
+                Playroom
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.concierge %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Concierge
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.conference_room %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Conference
+                Room
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.dishwasher %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Dishwasher
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.elevator %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Elevator
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.furnished %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Furnished
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.garden %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Garden
+                <span class="float-right"></span>
+              </li>
+              {% endif %}
             </ul>
           </div>
           <div class="col-md-6">
             <ul class="list-group list-group-flush">
-                {% if room.gym %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Gym
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.hardwood_flooring %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Hardwood Flooring
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.ice_maker %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Ice Maker
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.lobby %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Lobby
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.microwave %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Microwave
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.patio %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Patio
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.private_outdoor_space %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Private Outdoor Space
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.private_rooftop_space %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Private Rooftop Space
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.shared_outdoor_space %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Shared Outdoor Space
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.stainless_steel_appliances %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Stainless Steel Appliances
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.storage %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Storage
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.swimming_pool %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Swimming Pool
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
-                {% if room.terrace %}
-                <li class="list-group-item text-secondary border-0">
-                    <i class="fas fa-circle fa-xs"></i> Terrace
-                    <span class="float-right"></span>
-                </li>
-                {% endif %}
+              {% if room.gym %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Gym
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.hardwood_flooring %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Hardwood
+                Flooring
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.ice_maker %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Ice Maker
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.lobby %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Lobby
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.microwave %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Microwave
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.patio %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Patio
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.private_outdoor_space %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Private
+                Outdoor Space
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.private_rooftop_space %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Private
+                Rooftop Space
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.shared_outdoor_space %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Shared
+                Outdoor Space
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.stainless_steel_appliances %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Stainless
+                Steel Appliances
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.storage %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Storage
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.swimming_pool %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Swimming Pool
+                <span class="float-right"></span>
+              </li>
+              {% endif %} {% if room.terrace %}
+              <li class="list-group-item border-0" style="color: #4e5965">
+                <i class="fas fa-circle fa-xs text-secondary"></i> Terrace
+                <span class="float-right"></span>
+              </li>
+              {% endif %}
             </ul>
           </div>
         </div>
       </div>
       <div class="col-md-3">
         <div class="card mb-3">
-          <img
-            class="card-img-top"
-            src="{{ room.realtor.photo.url }}"
-            alt=""
-          />
+          <img class="card-img-top" src="{{ room.realtor.photo.url }}" alt="" />
           <div class="card-body">
             <h5 class="card-title">Property Agent</h5>
             <h6 class="text-secondary">{{ room.realtor }}</h6>
@@ -461,7 +430,7 @@
           class="btn-primary btn-block btn-lg text-white mb-3"
           data-toggle="modal"
           data-target="#inquiryModal"
-          style="text-align: center;text-decoration: none;"
+          style="text-align: center; text-decoration: none"
         >
           Send Email
         </a>
@@ -470,9 +439,10 @@
           href="tel:{{ room.realtor.phone }}"
           type="button"
           class="btn-primary btn-block btn-lg text-white mb-3"
-          style="text-align: center;text-decoration: none;"
+          style="text-align: center; text-decoration: none"
         >
-          <i class="fa fa-phone" aria-hidden="true"></i>  Call {{ room.realtor.phone }}
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          Call {{ room.realtor.phone }}
         </a>
         <a
           class="btn-primary btn-block btn-lg text-white"
@@ -480,7 +450,7 @@
           href="https://api.whatsapp.com/send?phone=1{{ room.realtor.phone }}"
           type="button"
           class="btn-primary btn-block btn-lg text-white"
-          style="text-align: center;text-decoration: none;"
+          style="text-align: center; text-decoration: none"
         >
           <i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp
         </a>
@@ -501,18 +471,19 @@
       </div>
       <div class="modal-body">
         <form action="{% url 'roomcontact' %}" method="POST">
-          {% csrf_token %}
-          {% if user.id_authenticated %}
-            <input type="hidden" name="user_id" value="{{ user.id }}">
+          {% csrf_token %} {% if user.id_authenticated %}
+          <input type="hidden" name="user_id" value="{{ user.id }}" />
           {% else %}
-            <input type="hidden" name="user_id" value="0">
+          <input type="hidden" name="user_id" value="0" />
           {% endif %}
-          <input type="hidden" name="realtor_email" value="{{ room.realtor.email }}">
-          <input type="hidden" name="room_id" value="{{ room.id }}">
+          <input
+            type="hidden"
+            name="realtor_email"
+            value="{{ room.realtor.email }}"
+          />
+          <input type="hidden" name="room_id" value="{{ room.id }}" />
           <div class="form-group">
-            <label for="property_name" class="col-form-label"
-              >Property:</label
-            >
+            <label for="property_name" class="col-form-label">Property:</label>
             <input
               type="text"
               name="room"
@@ -522,14 +493,35 @@
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
-            <input type="text" name="name" class="form-control" {% if user.is_authenticated %} value="{{ user.first_name }} {{ user.last_name }}" {% endif %} required />
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              {%
+              if
+              user.is_authenticated
+              %}
+              value="{{ user.first_name }} {{ user.last_name }}"
+              {%
+              endif
+              %}
+              required
+            />
           </div>
           <div class="form-group">
             <label for="email" class="col-form-label">Email:</label>
             <input
               type="email"
               name="email"
-              class="form-control" {% if user.is_authenticated %} value="{{ user.email }}" {% endif %}
+              class="form-control"
+              {%
+              if
+              user.is_authenticated
+              %}
+              value="{{ user.email }}"
+              {%
+              endif
+              %}
               required
             />
           </div>
@@ -580,7 +572,7 @@
   }
 </script>
 <script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJCZij5UK_kn8DMiJ-F7CNrq76lvNEEU&callback=initMap&libraries=&v=weekly"
-async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJCZij5UK_kn8DMiJ-F7CNrq76lvNEEU&callback=initMap&libraries=&v=weekly"
+  async
 ></script>
 {% endblock %}

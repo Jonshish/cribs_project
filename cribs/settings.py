@@ -87,10 +87,10 @@ WSGI_APPLICATION = "cribs.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": 'cribs_database',
-        'USER': 'postgres',
-        'PASSWORD': 'Keira1993',
-        'HOST': 'localhost',
+        "NAME": "cribs_database",
+        "USER": "postgres",
+        "PASSWORD": "Keira1993",
+        "HOST": "localhost",
     }
 }
 
@@ -143,15 +143,16 @@ MEDIA_URL = "/media/"
 
 # Messages
 from django.contrib.messages import constants as messages
+
 MESSAGE_TAGS = {
-    messages.ERROR: 'danger',
+    messages.ERROR: "danger",
 }
 
-#SMTP Email Configuration
+# SMTP Email Configuration
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'jonwebsitetest1993@gmail.com'
-EMAIL_HOST_PASSWORD = 'Bliptoe$4'
+EMAIL_HOST_USER = "info@cribsnyc.com"
+EMAIL_HOST_PASSWORD = "Wearecribs2020."

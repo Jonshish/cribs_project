@@ -1,6 +1,14 @@
 <!-- Footer -->
-    <footer id="main-footer" class="py-4 bg-primary text-white text-center">
-    Copyright &copy;
-    <span class="year"></span> 2021 Cribs NYC Real Estate
-    </footer>
+<footer id="main-footer" class="py-4 bg-primary text-white text-center">
+  <div class="container">
+    <div class="col-md-4" style="display: inline">
+        <span><a href="{% url 'termsofservice' %}" class="text-white" style="text-decoration: none;">Terms of Service</a></span>
+    </div>
+    <div class="col-md-4" style="display: inline-block">
+      <span>Copyright &copy; 2021 Cribs NYC Real Estate</span>
+    </div>
+    <div class="col-md-4" style="display: inline">
+        <span><a href="{% url 'privacypolicy' %}" class="text-white" style="text-decoration: none;">Privacy Policy</a></span>
+    </div>
+</footer>
 <!-- End Footer -->

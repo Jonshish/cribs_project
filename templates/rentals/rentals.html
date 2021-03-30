@@ -14,9 +14,7 @@
             <form class="search-form" action="{% url 'search_rentals' %}">
               <h1 class="display-4 mb-4">Apartment Search</h1>
               <p class="lead pb-4">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Recusandae quas, asperiores eveniet vel nostrum magnam
-                voluptatum tempore! Consectetur, id commodi!
+                Use the search box below to find your new apartment! Search by feature, neighborhood, bedrooms, and price range!
               </p>
               <!-- Form Row 1 -->
               <div class="form-row">
@@ -90,38 +88,38 @@
                   </div>
                   <hr />
                   <div class="row py-2 text-secondary">
-                    <div class="col-6">
-                      <i class="fas fa-bed"></i> Bedrooms: {{ rental.bedrooms }}
+                    <div class="col-6" style="color: #4e5965;">
+                      <i class="fas fa-bed text-secondary"></i> Bedrooms: {{ rental.bedrooms }}
                     </div>
-                    <div class="col-6">
-                      <i class="fas fa-bath"></i> Bathrooms: {{ rental.bathrooms }}
-                    </div>
-                  </div>
-                  <div class="row py-2 text-secondary">
-                    <div class="col-6">
-                      <i class="fas fa-th-large"></i> Sqft: {{ rental.sqft }}
-                    </div>
-                    <div class="col-6">
-                      <i class="fas fa-pump-soap"></i> Laundry: {{ rental.laundry }}
+                    <div class="col-6" style="color: #4e5965;">
+                      <i class="fas fa-bath text-secondary"></i> Bathrooms: {{ rental.bathrooms }}
                     </div>
                   </div>
                   <div class="row py-2 text-secondary">
-                    <div class="col-6">
-                      <i class="fas fa-male"></i> Doorman: {{ rental.doorman }}
+                    <div class="col-6" style="color: #4e5965;">
+                      <i class="fas fa-th-large text-secondary"></i> Sqft: {{ rental.sqft }}
                     </div>
-                    <div class="col-6">
-                      <i class="fas fa-paw"></i> Pets Allowed: {{ rental.pets_allowed }}
+                    <div class="col-6" style="color: #4e5965;">
+                      <i class="fas fa-pump-soap text-secondary"></i> Laundry: {{ rental.laundry }}
+                    </div>
+                  </div>
+                  <div class="row py-2 text-secondary">
+                    <div class="col-6" style="color: #4e5965;">
+                      <i class="fas fa-male text-secondary"></i> Doorman: {{ rental.doorman }}
+                    </div>
+                    <div class="col-6" style="color: #4e5965;">
+                      <i class="fas fa-paw text-secondary"></i> Pets Allowed: {{ rental.pets_allowed }}
                     </div>
                   </div>
                   <hr />
                   <div class="row py-2 text-secondary">
-                    <div class="col-12">
-                      <i class="fas fa-user"></i> {{ rental.realtor }}
+                    <div class="col-12" style="color: #4e5965;">
+                      <i class="fas fa-user text-secondary"></i> {{ rental.realtor }}
                     </div>
                   </div>
                   <div class="row text-secondary pb-2">
-                    <div class="col-12">
-                      <i class="fas fa-clock"></i> Move In: {{ rental.move_in_date }}
+                    <div class="col-12" style="color: #4e5965;">
+                      <i class="fas fa-clock text-secondary"></i> Move In: {{ rental.move_in_date }}
                     </div>
                   </div>
                   <hr />

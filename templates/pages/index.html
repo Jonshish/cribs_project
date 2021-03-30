@@ -14,9 +14,8 @@
         <div class="hero-text text-white">
           <span>CRIBS NYC</span>
           <h1>Find Your Home</h1>
-          <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis,
-          laboriosam?
+          <p class="mt-3">
+          Discover your dream apartment, and your perfect roommates.
           </p>
           <div class="hero-btn row">
             <a href="{% url 'about' %}" class="btn-one text-white">Learn More</a>
@@ -51,38 +50,38 @@
                       <i class="fas fa-map-marker text-secondary"></i> {{ rental.city }}, {{ rental.state }}, {{ rental.zipcode }}</p>
                   </div>
                   <hr>
-                  <div class="row py-2 text-secondary">
+                  <div class="row py-2" style="color: #4e5965;">
                     <div class="col-6">
-                      <i class="fas fa-bath"></i> Bathrooms: {{ rental.bathrooms }}
+                      <i class="fas fa-bed text-secondary"></i> Bedrooms: {{ rental.bedrooms }}
                     </div>
                     <div class="col-6">
-                      <i class="fas fa-bath"></i> Bathrooms: {{ rental.bathrooms }}
-                    </div>
-                  </div>
-                  <div class="row py-2 text-secondary">
-                    <div class="col-6">
-                      <i class="fas fa-th-large"></i> Sqft: {{ rental.sqft }}
-                    </div>
-                    <div class="col-6">
-                      <i class="fas fa-pump-soap"></i> Laundry: {{ rental.laundry }}
+                      <i class="fas fa-bath text-secondary"></i> Bathrooms: {{ rental.bathrooms }}
                     </div>
                   </div>
                   <div class="row py-2 text-secondary">
-                    <div class="col-6">
-                      <i class="fas fa-male"></i> Doorman: {{ rental.doorman }}
+                    <div class="col-6"  style="color: #4e5965;">
+                      <i class="fas fa-th-large text-secondary"></i> Sqft: {{ rental.sqft }}
                     </div>
-                    <div class="col-6">
-                      <i class="fas fa-paw"></i> Pets Allowed: {{ rental.pets_allowed }}
+                    <div class="col-6"  style="color: #4e5965;">
+                      <i class="fas fa-pump-soap text-secondary"></i> Laundry: {{ rental.laundry }}
+                    </div>
+                  </div>
+                  <div class="row py-2 text-secondary">
+                    <div class="col-6"  style="color: #4e5965;">
+                      <i class="fas fa-male text-secondary"></i> Doorman: {{ rental.doorman }}
+                    </div>
+                    <div class="col-6"  style="color: #4e5965;">
+                      <i class="fas fa-paw text-secondary"></i> Pets Allowed: {{ rental.pets_allowed }}
                     </div>
                   </div>
                   <hr>
                   <div class="row py-2 text-secondary">
-                    <div class="col-6">
-                      <i class="fas fa-user"></i> {{ rental.realtor }}</div>
+                    <div class="col-6" style="color: #4e5965;">
+                      <i class="fas fa-user text-secondary"></i> {{ rental.realtor }}</div>
                   </div>
                   <div class="row text-secondary pb-2">
-                    <div class="col-12">
-                      <i class="fas fa-clock"></i> Move In: {{ rental.move_in_date }}</div>
+                    <div class="col-12" style="color: #4e5965;">
+                      <i class="fas fa-clock text-secondary"></i> Move In: {{ rental.move_in_date }}</div>
                   </div>
                   <hr>
                   <a href="{% url 'rental' rental.id %}" class="btn btn-primary d-grid gap-2 text-white">More Info</a>
@@ -111,7 +110,7 @@
           <img src="{% static '/img/rental.jpg' %}" class="d-block w-50" alt="rental">
           <div class="carousel-caption d-none d-md-block mt-5">
             <h1 class="mb-5">Find Your New Apartment</h1>
-            <h5 class="mb-5">Some representative placeholder content for the first slide.</h5>
+            <h5 class="mb-5">Explore our newest collection of NYC apartments available for rent!</h5>
             <a href="{% url 'rentals' %}" class="btn btn-secondary text-white mb-5 pl-5 pr-5 pt-3 pb-2"><h5>View Apartments</h5></a>
           </div>
         </div>
@@ -119,7 +118,7 @@
           <img src="{% static '/img/room.jpg' %}" class="d-block w-50" alt="room">
           <div class="carousel-caption d-none d-md-block mt-5">
             <h1 class="mb-5">Find Your Next Room</h1>
-            <h5 class="mb-5">Some representative placeholder content for the second slide.</h5>
+            <h5 class="mb-5">Discover your home sweet home, along with roommates you'll love!</h5>
             <a href="{% url 'rooms' %}" class="btn btn-secondary text-white mb-5 pl-5 pr-5 pt-3 pb-2"><h5>View Rooms</h5></a>
           </div>
         </div>
@@ -144,9 +143,11 @@
           <div class="card mb-5">
             <img src="{% static '/img/blog1.jpg' %}" class="card-img-top" alt="blog1" width="640" height="225">
             <div class="card-body text-center d-flex flex-column">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h3 class="mb-4">Where should I live in New York City?</h3>
+              <p class="card-text mb-4 text-muted">
+                It is not a calm city, but there are moments of tranquillity. Yes, New York is loud, fast-paced...</p>
               <div class="col text-center">
-                <button href="listing.html" class="btn btn-secondary text-white w-50 mt-auto">Read More</button>
+                <a href="{% url 'blogs' %}" class="btn btn-secondary text-white w-50 mt-auto">Read More</a>
               </div>
             </div>
           </div>
@@ -155,9 +156,10 @@
           <div class="card mb-5">
             <img src="{% static '/img/blog2.jpg' %}" class="card-img-top" alt="blog2" width="640" height="225">
             <div class="card-body text-center d-flex flex-column">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h3 class="mb-4">Read this before you move to NYC!</h3>
+              <p class="card-text mb-4 text-muted">Are you considering relocating to New York City? The first thing you should know about it is...</p>
               <div class="col text-center">
-                <button href="listing.html" class="btn btn-secondary text-white w-50 mt-auto">Read More</button>
+                <a href="{% url 'blogs' %}" class="btn btn-secondary text-white w-50 mt-auto">Read More</a>
               </div>
             </div>
           </div>
@@ -166,9 +168,10 @@
           <div class="card mb-5">
             <img src="{% static '/img/blog3.jpg' %}" class="card-img-top" alt="blog3" width="640" height="225">
             <div class="card-body text-center d-flex flex-column">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h3 class="mb-4">More reasons to move to the Big Apple</h3>
+              <p class="card-text mb-4 text-muted">I’ve lived in New York City for nearly 20 years and have lived in nine different neighborhoods...</p>
             <div class="col text-center">
-              <button href="listing.html" class="btn btn-secondary text-white w-50 mt-auto">Read More</button>
+              <a href="{% url 'blogs' %}" class="btn btn-secondary text-white w-50 mt-auto">Read More</a>
             </div>
               </div>
             </div>
