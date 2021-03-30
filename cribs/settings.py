@@ -26,6 +26,16 @@ SECRET_KEY = "dr5o5vs$9r1b)ak=(bc!2dc455mr%$+@+icnmhajmggl+gg*st"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_REFERRER_POLICY = "strict-origin"
+SECURE_BROWSER_XSS_FILTER = True
+
+
+
 ALLOWED_HOSTS = []
 
 
