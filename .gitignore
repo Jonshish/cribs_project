@@ -10,3 +10,4 @@ cribs_project_venv
 /static
 schemas.txt
 to-do.txt
+cribs_workspace.code-workspace
