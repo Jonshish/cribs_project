@@ -30,7 +30,7 @@ def contact(request):
 
     # Send email
     # Send email
-    # send_mail('Apartment Inquiry', 'There has been an inquiry for ' + rental + '. Sign into the admin panel for more info', 'jonwebsitetest1993@gmail.com', [realtor_email,], fail_silently=False) 
+    # send_mail('Apartment Inquiry', 'There has been an inquiry for ' + rental + '. Sign into the admin panel for more info', 'info@cribsnyc.com', [realtor_email,], fail_silently=False) 
 
     messages.success(request, 'Your request has been submitted, an agent will get back to you soon')
     return redirect('/rentals/'+rental_id)
