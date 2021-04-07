@@ -5,20 +5,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cribs NYC Real Estate Brokerage</title>
+    <meta name="author" content="Cribs NYC Real Estate Brokerage" />
+    <meta
+      name="description"
+      content="Cribs NYC Real Estate Brokerage is a real estate brokerage located in New York City that helps renters find apartments for rent in nyc and rooms for rent in nyc."
+    />
+    <meta
+      name="keywords"
+      content="real estate, real estate broker, real estate brokerage, real estate nyc, real estate brokerage nyc, real estate broker nyc, rent an apartment nyc, rent a room nyc, apartments for rent nyc, rooms for rent nyc, apartment for rent new york city, room for rent new york city"
+    />
+    <meta
+      name="image"
+      property="og:image"
+      content="https://www.cribsnyc.com/img/cribs-work.jpg"
+      href="{% static '/img/cribs-work.jpg' %}"
+    />
+    <meta property="og:site_name" content="Cribs NYC Real Estate Brokerage" />
+    <meta property="og:url" content="https://www.cribsnyc.com" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image:url"
+      content="https://www.cribsnyc.com/img/cribs-work.jpg"
+      href="{% static '/img/cribs-work.jpg' %}"
+    />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
     <!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" type="image/png" href="{% static '/img/cribsfavicon.ico' %}"/>
+        <link
+          rel="shortcut icon"
+          type="image/png"
+          href="{% static '/img/cribsfavicon.ico' %}"
+        />
         <!-- Font Awesome -->
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         />
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}" />
         <!-- My Bootstrap Custom CSS -->
         <link rel="stylesheet" href="{% static '/css/main.css' %}" />
         <!-- Lightbox -->
@@ -26,16 +56,16 @@
         <title>Cribs NYC {% block title %}{% endblock %}</title>
       </head>
       <body>
-    <!-- Top Bar -->
-      {% include 'partials/_topbar.html' %}
-    <!-- End Top Bar -->
-    <!-- Nav Bar -->
-      {% include 'partials/_navbar.html' %}
-    <!-- End Nav Bar -->
+        <!-- Top Bar -->
+        {% include 'partials/_topbar.html' %}
+        <!-- End Top Bar -->
+        <!-- Nav Bar -->
+        {% include 'partials/_navbar.html' %}
+        <!-- End Nav Bar -->
         {% block content %} {% endblock %}
-    <!-- Footer -->
-    {% include 'partials/_footer.html' %}
-    <!-- End Footer -->
+        <!-- Footer -->
+        {% include 'partials/_footer.html' %}
+        <!-- End Footer -->
 
         <script
           src="https://kit.fontawesome.com/9b4337080f.js"
@@ -47,11 +77,30 @@
         <script src="{% static '/js/bootstrap.min.js' %}"></script>
         <script src="{% static '/js/lightbox.min.js' %}"></script>
         <script type="text/javascript">
-          (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
-          vgo('setAccount', '476695537');
-          vgo('setTrackByDefault', true);
-      
-          vgo('process');
+          ;(function (e, t, o, n, p, r, i) {
+            e.visitorGlobalObjectAlias = n
+            e[e.visitorGlobalObjectAlias] =
+              e[e.visitorGlobalObjectAlias] ||
+              function () {
+                ;(e[e.visitorGlobalObjectAlias].q =
+                  e[e.visitorGlobalObjectAlias].q || []).push(arguments)
+              }
+            e[e.visitorGlobalObjectAlias].l = new Date().getTime()
+            r = t.createElement('script')
+            r.src = o
+            r.async = true
+            i = t.getElementsByTagName('script')[0]
+            i.parentNode.insertBefore(r, i)
+          })(
+            window,
+            document,
+            'https://diffuser-cdn.app-us1.com/diffuser/diffuser.js',
+            'vgo'
+          )
+          vgo('setAccount', '476695537')
+          vgo('setTrackByDefault', true)
+
+          vgo('process')
         </script>
       </body>
     </html>
