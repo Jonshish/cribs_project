@@ -1,5 +1,4 @@
-{% extends 'base.html' %} {% load humanize %} {% block title %} |
-{{ rental.title }}{% endblock %} {% block content %}
+{% extends 'base.html' %} {% load humanize %} {% block title %} | {{ rental.title }}{% endblock %} {% block content %}
 <section id="rental-showcase-inner" class="py-5 text-white">
   <div class="rental-overlay">
     <div class="rental-container" style="max-width: 100%; overflow-x: hidden">
@@ -7,7 +6,7 @@
         <div class="col-md-12">
           <h1 class="display-4">{{ rental.title }}</h1>
           <p class="lead">
-            <i class="fas fa-map-marker"></i> {{ rental.city }},
+            <i class="fas fa-map-marker"></i> {{ rental.city }}, 
             {{ rental.state }}, {{ rental.zipcode }}
           </p>
         </div>
@@ -267,7 +266,7 @@
           </div>
         </div>
         <div class="row mb-5">
-          <div class="col-md-12 mt-5">
+          <div class="col-md-12 mt-2">
             <h2 class="text-primary">Amenties List</h2>
           </div>
         </div>
